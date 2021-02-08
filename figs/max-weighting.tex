@@ -1,0 +1,61 @@
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \node[draw, circle] at (0,0) (a1) {$L_1$};
+    \node[draw, circle] at (0,-1.5) (a2) {$L_2$};
+    \node[draw, circle] at (0,-3) (a3) {$L_3$};
+    \node[draw, circle] at (0,-4.5) (a4) {$L_4$};
+
+    \node[draw, circle] at (3,0) (b1) {$E_1$};
+    \node[draw, circle] at (3,-1.5) (b2) {$E_2$};
+    \node[draw, circle] at (3,-3) (b3) {$E_3$};
+    \node[draw, circle] at (3,-4.5) (b4) {$E_4$};
+
+    \draw[very thick] (a1) -- (b1);
+    \draw[] (a1) -- (b2);
+    \draw[] (a1) -- (b3);
+    \draw[] (a1) -- (b4);
+
+    \draw[] (a2) -- (b1);
+    \draw[] (a2) -- (b2);
+    \draw[very thick] (a2) -- (b3);
+    \draw[] (a2) -- (b4);
+
+    \draw[] (a3) -- (b1);
+    \draw[] (a3) -- (b2);
+    \draw[] (a3) -- (b3);
+    \draw[very thick] (a3) -- (b4);
+
+    \draw[] (a4) -- (b1);
+    \draw[very thick] (a4) -- (b2);
+    \draw[] (a4) -- (b3);
+    \draw[] (a4) -- (b4);
+
+    \node[anchor=west] at (5,0) () {$L_1:$ 1,2,3};
+    \node[anchor=west] at (5,-0.5) () {$L_2:$ 4,5,6};
+    \node[anchor=west] at (5,-1) () {$L_3:$ 7,8,9};
+    \node[anchor=west] at (5,-1.5) () {$L_4:$};
+    \node[anchor=west] at (5,-2.5) () {$E_1:$ 1,2};
+    \node[anchor=west] at (5,-3.0) () {$E_2:$ 3,4};
+    \node[anchor=west] at (5,-3.5) () {$E_3:$ 5,6,7};
+    \node[anchor=west] at (5,-4.0) () {$E_4:$ 8,9};
+
+    \node[anchor=north] at (10,1) () {
+      \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        & $E_1$ & $E_2$ & $E_3$ & $E_4$ \\
+        \hline
+        $L_1$ & \textbf{2} & 2 & 1 & 0 \\
+        \hline
+        $L_2$ & 0 & 1 & \textbf{2} & 0 \\
+        \hline
+        $L_3$ & 0 & 0 & 1 & \textbf{2} \\
+        \hline
+        $L_4$ & 0 & \textbf{0} & 0 & 0 \\
+        \hline
+      \end{tabular}
+    };
+  \end{tikzpicture}
+  \caption{Edit distance between card sorts~\parencite{deibel2005}}
+\end{figure}

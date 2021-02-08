@@ -1,0 +1,84 @@
+%\usepackage[utf8]{inputenc}
+
+\usepackage[top=2.5cm, left=2.5cm, right=2.5cm, bottom=3.2cm]{geometry}
+
+
+% Load trebuchet in for the title and section fonts
+\usepackage{fontspec}
+\newfontfamily\titlefont{Trebuchet MS}
+
+% Set up times new roman as font for text and maths
+\setmainfont{XITS}
+
+% Maths
+\usepackage[fleqn]{amsmath}
+\usepackage[mathrm=sym]{unicode-math}
+\setmathfont{XITS Math}
+
+% Word spacing and formatting
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage{microtype}
+%\usepackage[none]{hyphenat} % prevent hyphenation to allow easy copy and paste to word template later
+
+
+
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+% Section header styling
+\usepackage{sectsty}
+\sectionfont{\titlefont\Large\raggedright}
+\subsectionfont{\titlefont\large\raggedright}
+\subsubsectionfont{\it\titlefont\normalsize\raggedright}
+
+% Set up caption styling
+\usepackage{caption}
+\DeclareCaptionFormat{capfont}{\titlefont\small#1#2#3}
+\captionsetup{format=capfont,font=bf,labelsep=period} 
+
+% Hyperlinks
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\urlstyle{same}
+
+
+\usepackage[detect-all]{siunitx} % SI Unit package
+
+%\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{\footnotesize$\blacksquare$}
+
+% Citations
+\usepackage[
+    backend=biber,
+    bibencoding=utf8,
+    sorting=nyt,
+    style=apa,
+    url=false, % include url in reference
+    doi=false, % include doi in reference
+    %sorting=none, % sorting of citations
+    % autocite=superscript, % autocite becomes superscript
+    maxcitenames=2, % Max names displayed when citing in text
+    %maxbibnames=20, % Max number of names disaplayed in the bibliography
+    giveninits=true, % Use initials
+    uniquename=init
+]{biblatex}
+%\setlength\bibitemsep{0.1\itemsep}
+\renewcommand*{\bibfont}{\small}
+\addbibresource{citations.bib}
+
+% cross-referencing
+\usepackage[noabbrev, capitalise]{cleveref}
+
+\usepackage{wrapfig}
+\usepackage[]{graphicx}
+\usepackage{standalone}
+\usepackage{subfig}
+\usepackage{tikz}
+
+\usepackage{booktabs}
+% https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
